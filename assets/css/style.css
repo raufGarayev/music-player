@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(230, 228, 228);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+button {
+    color: #000;
+}
+.player {
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: rgb(255, 255, 255);
+    width: 350px;
+    border-radius: 50px;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 45px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.top button {
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+}
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* padding-bottom: 50px; */
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+.buttons > #prev, #next {
+    display: flex;
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+}
+.buttons > #play {
+    font-size: 25px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(244, 6, 228);
+    border: none;
+    color: #fff;
+}
+.other button {
+    border: none;
+    background-color: transparent;
+    font-size: large;
+}
+.other {
+    display: flex;
+    gap: 40px;
+}
+h3 {
+    font-size: 23px;
+    font-weight: 600;
+}
+small {
+    font-size: 19px;
+}
+.music-name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.middle img {
+    width: 200px;
+    opacity: 0.9;
+}
+
+.duration-time {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.progress-cont {
+    background: #000;
+    border-radius: 5px;
+    height: 4px;
+    cursor: pointer;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.progress {
+    background-color: red;
+    width: 0%;
+    height: 100%;
+    transition: width .1s linear;
+}

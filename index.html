@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Music Player</title>
+</head>
+<body>
+    <div class="player">
+        <div class="top">
+            <button id="back"><i class="fa-solid fa-left-long"></i></button>
+            <button id="share"><i class="fa-solid fa-share-nodes"></i></button>
+        </div>
+        <div class="middle">
+            <img src="./assets/image/vinyl-306070_1280.webp" alt="player">
+        </div>
+        <div class="bottom">
+            <div class="music-name">
+                <h3 id="title">Valse</h3>
+                <small id="artist">Evgeny Grinko</small>
+                <audio src="" loop="loop"></audio>
+            </div>
+            <div class="progress-cont" id="progress-cont">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="duration-time">
+                <span id="current">0:00</span>
+                <span id="duration">2:35</span>
+            </div>
+            <div class="buttons">
+                <button id="prev"><i class="fa-solid fa-backward-step"></i></button>
+                <button id="play"><i class="fa-solid fa-play"></i></button>
+                <button id="next"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
