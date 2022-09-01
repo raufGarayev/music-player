@@ -11,6 +11,11 @@ const current = document.getElementById('current')
 const progress = document.getElementById('progress')
 const progressCont = document.getElementById('progress-cont')
 
+const menubtn = document.getElementById('menubtn');
+const sideBar = document.getElementById('mySidenav')
+
+let currentlyPlaying
+
 
 const songs = [
     {
@@ -59,6 +64,8 @@ function loadSong(song) {
     title.textContent = song.displayName
     artist.textContent = song.artist
     music.src = `music/${song.name}.mp3`
+
+    currentlyPlaying = song.displayName
 }
 
 let songIndex = 0
@@ -132,3 +139,57 @@ function setProgress(e) {
 
 music.addEventListener('timeupdate', updateProgress)
 progressCont.addEventListener('click', setProgress)
+
+menubtn.addEventListener('click', animateSidebar)
+let opened = false
+
+
+function animateSidebar() {
+    if(opened) {
+        closeNav()
+    } else {
+        openNav()
+    }
+}
+
+function openNav(e) {
+    opened = true
+    sideBar.style.width = "250px";
+    
+    sideBar.innerHTML = '<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>'
+
+    for(i=0; i<songs.length; i++) {
+        sideBar.innerHTML += `<p id="${[i]}" class="songsbtn">${songs[i].artist} - ${songs[i].displayName}</p><div class="hrt"></div>`
+    }
+
+    const menusongs = document.querySelectorAll('.songsbtn')
+    menusongs.forEach(btn => {
+        btn.addEventListener('click', something)
+    });
+
+    if(isPlaying) {
+        console.log(currentlyPlaying)
+    }
+}
+
+
+function something(e) {
+    const clickedEl = e.target
+
+    loadSong(songs[clickedEl.id])
+    playSong()
+    
+    const menusongs = document.querySelectorAll('.songsbtn')
+
+    for (let index = 0; index < menusongs.length; index++) {
+        menusongs[index].style.color = "#fff"
+    }
+
+    clickedEl.style.color = "green"
+}
+function closeNav() {
+    opened = false
+    sideBar.style.width = "0";
+
+    sideBar.innerHTML = ""
+}
